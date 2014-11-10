@@ -4,16 +4,11 @@ window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
+		
+		var res = str.replace(/a/gi, "#");
+		return res;
+		//Gör alla uppercase till lowercase och tvärtom
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
-
-
-
-
-
-
 	};
 	// ------------------------------------------------------------------------------
 
