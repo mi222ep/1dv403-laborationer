@@ -4,7 +4,18 @@ var makePerson = function(persArr){
 
  var result = {};
 
-var name = persArr.map(function(name) {return name + ', ';});
+var names = persArr.map(function(persArr){return persArr.name + ', ';});
+var ages = persArr.map(function(persArr){return persArr.age;})
+
+ages.sort();
+
+result.names = names.sort();
+ 
+
+result.minAge = ages[0];
+result.maxAge = ages[persArr.length - 1];
+result.averageAge = Math.round((ages.reduce(function(a, b) {return a + b;}))/(persArr.length));
+
 //Map "name:" ', ' "name" ', ';
 //Map "age:"
 
