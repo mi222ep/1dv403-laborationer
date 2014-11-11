@@ -5,12 +5,19 @@ window.onload = function(){
 	
 	var birthday = function(date){
 		
+		var birthDate = new Date(date);
+		var nowDate = new Date();
+		//"2012","02","02"
+		
+		//antal dagar totlt sedan födelsedag
+		var difference = Math.floor((nowDate.getTime() - birthDate.getTime())/1000/60/60/24);
 
+		var year = Math.floor(((nowDate.getFullYear() - 1970)*365.25)+ 0.5);
 
-			// Din kod här.
-
-
-
+		//Idag är dag nummer x iår
+		var diff = (year - difference);
+		
+		return(difference);
 
 	};
 	// ------------------------------------------------------------------------------

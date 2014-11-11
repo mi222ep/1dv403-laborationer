@@ -8,6 +8,7 @@ window.onload = function(){
 		var res = str.replace(/a/gi, "#");
 		return res;
 		//Gör alla uppercase till lowercase och tvärtom
+		//Loopa igenom strängen och byt ut respektive upper case och lower case
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	};
 	// ------------------------------------------------------------------------------
