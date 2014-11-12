@@ -8,7 +8,6 @@ window.onload = function() {
 		var birthDate = new Date(date);
 		var nowDate = new Date();
 		
-		
 		var difference = Math.floor((nowDate.getTime() - birthDate.getTime()) / 1000 / 60 / 60 / 24);
 		
 		if (difference < 0){
