@@ -5,8 +5,27 @@ window.onload = function(){
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
 		
-		var res = str.replace(/a/gi, "#");
+		var checkUppLow= str.split('');
+		
+		for (var i = 0; i < checkUppLow.length; i++) { 
+			
+			var character = checkUppLow[i];
+			
+			if(character == character.toUpperCase()){
+				
+				checkUppLow[i] = character.toLowerCase();
+			}
+			else{
+				checkUppLow[i] = character.toUpperCase();
+			}
+       }
+       
+       var changedCase = checkUppLow.join('');
+		
+		var res = changedCase.replace(/a/gi, "#");
 		return res;
+		
+		
 		//Gör alla uppercase till lowercase och tvärtom
 		//Loopa igenom strängen och byt ut respektive upper case och lower case
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
