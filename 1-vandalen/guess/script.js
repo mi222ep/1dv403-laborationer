@@ -15,11 +15,11 @@ do{
 			if (number == secret){
 				return [true, "Grattis du vann! Det hemliga talet var "+secret+" och du gissade fel "+numberOfGuesses+" gånger innan det blir rätt."];
 			}
-			if(number<secret && (number >0 && number <100)){
+			else if(number<secret && (number >0 && number <100)){
 				numberOfGuesses+=1;
 				return [false, "Det hemliga talet är högre!"];
 			}
-			if (number>secret && (number >0 && number <100)){
+			else if (number>secret && (number >0 && number <100)){
 				numberOfGuesses+=1;
 				return [false, "Det hemliga talet är lägre!"];
 			}

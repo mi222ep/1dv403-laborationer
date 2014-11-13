@@ -21,19 +21,6 @@ var makePerson = function(persArr) {
         return a + b;
     })) / (persArr.length));
 
-    //Map "name:" ', ' "name" ', ';
-    //Map "age:"
-
-    //minAge - nummer innehållande den ålder i de inskickade objekten som är lägst.
-    //Sortera åldern, minAge = personArr[0] 
-    //maxAge -nummer innehållande den ålder i de inskickade objekten som är högst.
-
-    //avarageAge - nummer innehållande medelåldern av de inskickade objektens ålder.
-    //Reduce allihopa, dela på antal delar
-
-    //names - sträng innehållande samtliga personers namn separerade med ", " (komma och efterföljande mellanslag). Namnen sorteras i bokstavsordning.
-    // Din kod här...
-
     return result;
 }
 
