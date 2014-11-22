@@ -4,18 +4,34 @@ var messageApp ={
 
 init: function(){
     
-    var test = new Message("test 1", new Date());
-    messageApp.messages.push(test);
+    var submit = document.getElementById("send");
+    submit.onclick = messageApp.CreateMessage;
+
+},
+CreateMessage: function(e){
+    var text = document.getElementById("meddelande").value;
+    var mess = new Message(text, new Date());
+    messageApp.messages.push(mess);
+    messageApp.RenderMessages();
     
-    var test2 = new Message("test 2", new Date());
-    messageApp.messages.push(test2);
+}, 
+RenderMessages: function(){
+    //Remove all messages
+    document.getElementById("messagearea").innerHTML = "";
     
-    var test3 = new Message("test 3", new Date());
-    messageApp.messages.push(test3);
-    
-    var hej = messageApp.messages[1].getText();
-    alert(hej);
+            //Remder all messages
+    for(var i=0; i< messageApp.messages.length; ++i){
+        messageApp.RenderMessage(i);
+    }
+},
+RenderMessage: function(messageID){
+    var axel = messageApp.messages[messageID].getHTMLText();
+    document.getElementById("messagearea").innerHTML = axel;
 }
+
 };
+
+
+
 
 window.onload = messageApp.init;
