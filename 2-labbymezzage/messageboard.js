@@ -28,11 +28,14 @@ RenderMessage: function(messageID){
     var message = messageApp.messages[messageID].getHTMLText();
     var time = messageApp.messages[messageID].getDateText();
     var div = document.createElement("div");
+    var em = document.createElement("em");
     var p = document.createElement("p");
-    var text = document.createTextNode(message)
-    div.appendChild(p);
-    p.appendChild(text);
     
+    div.appendChild(em);
+    div.appendChild(p);
+    
+    p.innerHTML = message;
+    em.innerHTML = time;
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
