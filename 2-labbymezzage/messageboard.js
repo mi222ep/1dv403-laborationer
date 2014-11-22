@@ -25,6 +25,10 @@ RenderMessages: function(){
     }
 },
 RenderMessage: function(messageID){
+    //Writes message counter
+    var messageCount = document.querySelector("#messageNumber");
+    messageCount.innerHTML = "Antal meddelanden:" +(messageID + 1);
+    //Writes new message
     var message = messageApp.messages[messageID].getHTMLText();
     var time = messageApp.messages[messageID].getDateText();
     var div = document.createElement("div");
@@ -36,6 +40,7 @@ RenderMessage: function(messageID){
     
     p.innerHTML = message;
     em.innerHTML = time;
+    
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
