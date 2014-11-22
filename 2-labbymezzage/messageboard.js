@@ -1,6 +1,8 @@
 var messageApp ={ 
-init:function(){
-    alert("So far so good");
+
+init: function(){
+    
 }
-}
+};
+
 window.onload = messageApp.init;
