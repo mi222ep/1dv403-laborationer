@@ -17,9 +17,10 @@ function Message(message, date) {
     Message.prototype.toString = function(){
         return this.getText()+"("+this.getDate()+")";
     };
-    Message.prototype.getHTMLText = function(){
-        
-    };
-    Message.prototype.getDateText = function(){
-        
-    };
+Message.prototype.getHTMLText = function(){
+    return this.getText().replace(/[\n\r]/g, "<br/>");
+};
+    
+Message.prototype.getDateText = function(){
+    return this.getDate().toLocaleTimeString();
+};
