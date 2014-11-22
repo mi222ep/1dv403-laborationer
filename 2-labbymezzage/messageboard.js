@@ -19,15 +19,15 @@ RenderMessages: function(){
     //Remove all messages
     document.getElementById("messagearea").innerHTML = "";
     
-            //Remder all messages
-    for(var i=0; i< messageApp.messages.length; ++i){
+            //Render all messages
+    for(var i=0; i < messageApp.messages.length; ++i){
         messageApp.RenderMessage(i);
     }
 },
 RenderMessage: function(messageID){
     var axel = messageApp.messages[messageID].getHTMLText();
     document.getElementById("messagearea").innerHTML = axel;
-}
+},
 
 };
 
