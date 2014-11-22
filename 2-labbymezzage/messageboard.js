@@ -25,8 +25,16 @@ RenderMessages: function(){
     }
 },
 RenderMessage: function(messageID){
-    var axel = messageApp.messages[messageID].getHTMLText();
-    document.getElementById("messagearea").innerHTML = axel;
+    var message = messageApp.messages[messageID].getHTMLText();
+    var time = messageApp.messages[messageID].getDateText();
+    var div = document.createElement("div");
+    var p = document.createElement("p");
+    var text = document.createTextNode(message)
+    div.appendChild(p);
+    p.appendChild(text);
+    
+    var di = document.querySelector("#messagearea");
+    di.appendChild(div);
 },
 
 };
