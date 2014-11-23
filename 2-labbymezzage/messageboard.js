@@ -28,7 +28,8 @@ RenderMessages: function(){
 RenderMessage: function(messageID){
     //Writes message counter
     var messageCount = document.querySelector("#messageNumber");
-    messageCount.innerHTML = "Antal meddelanden:" +(messageID + 1);
+    messageCount.innerHTML = "Antal meddelanden: " +(messageApp.messages.length);
+    
     //Writes new message
     var message = messageApp.messages[messageID].getHTMLText();
     var time = messageApp.messages[messageID].getDateText();
@@ -42,15 +43,11 @@ RenderMessage: function(messageID){
     
     //Sets attribute for delete image
     remove.setAttribute("src", "pics/delete.png");
-    remove.setAttribute("height", "30");
-    remove.setAttribute("width", "30");
     remove.setAttribute("class", "smallLogo");
     remove.setAttribute("alt", "Papperskorg - tryck här för att radera meddelandet");
     
     //Sets attribute for time image
     showTime.setAttribute("src", "pics/time.png");
-    showTime.setAttribute("height", "30");
-    showTime.setAttribute("width", "30");
     showTime.setAttribute("class", "smallLogo");
     showTime.setAttribute("alt", "Klocka - tryck här för att se tid och datum då meddelandet skapades");
     
@@ -67,10 +64,11 @@ RenderMessage: function(messageID){
     //Organize message elements within each other
     removeLink.appendChild(remove);
     showTimeLink.appendChild(showTime);
+    div.setAttribute("class", "message");
     div.appendChild(removeLink);
     div.appendChild(showTimeLink);
-    div.appendChild(em);
     div.appendChild(p);
+        div.appendChild(em);
     
     //Posts current message and time in the element
     p.innerHTML = message;
@@ -80,9 +78,18 @@ RenderMessage: function(messageID){
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
-ShowTime: function(messageID){alert("ShowTime")},
+ShowTime: function(messageID){
+    var timeObject = messageApp.messages[messageID].getDate();
+    var day = timeObject.toLocaleDateString();
+    var time = timeObject.toLocaleTimeString();
+    alert("inlägget skapades "+ day+ " klockan " + time);
+    
+},
 //Array.splice(messageID, 1);
-RemoveMessage: function(messageID){alert(messageID)},
+RemoveMessage: function(messageID){
+    messageApp.messages.splice(messageID, 1);
+    messageApp.RenderMessages();
+    },
 
 };
 

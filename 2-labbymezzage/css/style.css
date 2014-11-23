@@ -1,0 +1,38 @@
+body{
+    background-color: #FF9900;
+    font-family: comic sans MS;
+    }
+div{
+    background-color: #FFDE00;
+}
+h1, h2, h3{
+    color: #097054;
+}
+textarea{
+    width: 310px;
+    height: 80px;
+    float: left;
+}
+messagearea{
+    overflow: hidden;
+}
+.smallLogo{
+    height: 20px;
+    float: right;
+}
+.message{
+    border-bottom: 2px solid black;
+    padding: 20px;
+}
+#messageApp{
+    
+    width:  450px;
+    margin: 0 auto;
+    padding: 20px;
+        background-color: #6599FF;
+}
+input{
+    width: 130px;
+    height: 80px;
+    background-color: #097054;
+}
