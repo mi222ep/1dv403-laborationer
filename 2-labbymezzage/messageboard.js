@@ -39,6 +39,7 @@ RenderMessage: function(messageID){
     var remove = document.createElement("img");
     var showTime = document.createElement("img");
     
+    //Sets attribute for delete image
     remove.setAttribute("src", "pics/delete.png");
     remove.setAttribute("height", "30");
     remove.setAttribute("width", "30");
@@ -46,6 +47,7 @@ RenderMessage: function(messageID){
     remove.setAttribute("class", "smallLogo");
     remove.setAttribute("alt", "Papperskorg - tryck här för att radera meddelandet");
     
+    //Sets attribute for time image
     showTime.setAttribute("src", "pics/time.png");
     showTime.setAttribute("height", "30");
     showTime.setAttribute("width", "30");
@@ -53,20 +55,23 @@ RenderMessage: function(messageID){
     showTime.setAttribute("class", "smallLogo");
     showTime.setAttribute("alt", "Klocka - tryck här för att se tid och datum då meddelandet skapades");
     
+    //Make the links clickable
     removeLink.setAttribute("href", "#");
     showTimeLink.setAttribute("href", "#");
     
+    //Organize message elements within each other
     removeLink.appendChild(remove);
     showTimeLink.appendChild(showTime);
-    
     div.appendChild(removeLink);
     div.appendChild(showTimeLink);
     div.appendChild(em);
     div.appendChild(p);
     
+    //Posts current message and time in the element
     p.innerHTML = message;
     em.innerHTML = time;
     
+    //Find the #messagearea and put the new div there
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
