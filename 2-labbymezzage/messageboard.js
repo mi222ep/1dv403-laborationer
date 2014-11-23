@@ -34,7 +34,33 @@ RenderMessage: function(messageID){
     var div = document.createElement("div");
     var em = document.createElement("em");
     var p = document.createElement("p");
+    var removeLink = document.createElement("a");
+    var showTimeLink = document.createElement("a");
+    var remove = document.createElement("img");
+    var showTime = document.createElement("img");
     
+    remove.setAttribute("src", "pics/delete.png");
+    remove.setAttribute("height", "30");
+    remove.setAttribute("width", "30");
+    remove.setAttribute("id", "remove");
+    remove.setAttribute("class", "smallLogo");
+    remove.setAttribute("alt", "Papperskorg - tryck här för att radera meddelandet");
+    
+    showTime.setAttribute("src", "pics/time.png");
+    showTime.setAttribute("height", "30");
+    showTime.setAttribute("width", "30");
+    showTime.setAttribute("id", "remove");
+    showTime.setAttribute("class", "smallLogo");
+    showTime.setAttribute("alt", "Klocka - tryck här för att se tid och datum då meddelandet skapades");
+    
+    removeLink.setAttribute("href", "#");
+    showTimeLink.setAttribute("href", "#");
+    
+    removeLink.appendChild(remove);
+    showTimeLink.appendChild(showTime);
+    
+    div.appendChild(removeLink);
+    div.appendChild(showTimeLink);
     div.appendChild(em);
     div.appendChild(p);
     
