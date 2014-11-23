@@ -4,9 +4,10 @@ var messageApp ={
 
 init: function(){
     
+    //If submit button is clicked
     var submit = document.getElementById("send");
     submit.onclick = messageApp.CreateMessage;
-
+    
 },
 CreateMessage: function(e){
     var text = document.getElementById("meddelande").value;
@@ -43,7 +44,6 @@ RenderMessage: function(messageID){
     remove.setAttribute("src", "pics/delete.png");
     remove.setAttribute("height", "30");
     remove.setAttribute("width", "30");
-    remove.setAttribute("id", "remove");
     remove.setAttribute("class", "smallLogo");
     remove.setAttribute("alt", "Papperskorg - tryck här för att radera meddelandet");
     
@@ -51,13 +51,18 @@ RenderMessage: function(messageID){
     showTime.setAttribute("src", "pics/time.png");
     showTime.setAttribute("height", "30");
     showTime.setAttribute("width", "30");
-    showTime.setAttribute("id", "remove");
     showTime.setAttribute("class", "smallLogo");
     showTime.setAttribute("alt", "Klocka - tryck här för att se tid och datum då meddelandet skapades");
     
-    //Make the links clickable
+    //Sets attribute for links surrounding the images
     removeLink.setAttribute("href", "#");
     showTimeLink.setAttribute("href", "#");
+    removeLink.onclick = function() {
+        messageApp.RemoveMessage(messageID);
+    }
+    showTime.onclick = function() {
+        messageApp.ShowTime(messageID);
+    }
     
     //Organize message elements within each other
     removeLink.appendChild(remove);
@@ -75,6 +80,9 @@ RenderMessage: function(messageID){
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
+ShowTime: function(){alert("ShowTime")},
+RemoveMessage: function(messageID){alert("RemoveMessage")},
+
 
 };
 
