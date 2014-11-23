@@ -80,9 +80,9 @@ RenderMessage: function(messageID){
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
 },
-ShowTime: function(){alert("ShowTime")},
-RemoveMessage: function(messageID){alert("RemoveMessage")},
-
+ShowTime: function(messageID){alert("ShowTime")},
+//Array.splice(messageID, 1);
+RemoveMessage: function(messageID){alert(messageID)},
 
 };
 
