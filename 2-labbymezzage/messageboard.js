@@ -77,6 +77,7 @@ RenderMessage: function(messageID){
     //Find the #messagearea and put the new div there
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
+    
     //Scroll to bottom of page
     window.scrollTo(0,document.body.scrollHeight);
 },

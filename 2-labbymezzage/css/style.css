@@ -30,11 +30,13 @@ textarea{
     box-shadow: 10px 5px 5px gray;
 }
 #messageApp{
-    height: 100%;
-    width:  450px;
-    
+    min-height: 00px;
+    display: block;
+    width:  500px;
+    margin: 0 auto;
     padding: 20px;
     background-color: #6599FF;
+    
     }
 input{
     width: 130px;
