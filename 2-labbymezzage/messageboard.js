@@ -68,15 +68,17 @@ RenderMessage: function(messageID){
     div.appendChild(removeLink);
     div.appendChild(showTimeLink);
     div.appendChild(p);
-        div.appendChild(em);
+    div.appendChild(em);
     
     //Posts current message and time in the element
     p.innerHTML = message;
-    em.innerHTML = time;
+    em.innerHTML = ("Mottogs kl " +time);
     
     //Find the #messagearea and put the new div there
     var di = document.querySelector("#messagearea");
     di.appendChild(div);
+    //Scroll to bottom of page
+    window.scrollTo(0,document.body.scrollHeight);
 },
 ShowTime: function(messageID){
     var timeObject = messageApp.messages[messageID].getDate();

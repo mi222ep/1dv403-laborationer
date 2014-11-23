@@ -2,37 +2,56 @@ body{
     background-color: #FF9900;
     font-family: comic sans MS;
     }
-div{
-    background-color: #FFDE00;
+
+h1{
+     color: #097054;
+     font-size: 3em;
+     text-shadow: 2px 2px gray;
 }
 h1, h2, h3{
-    color: #097054;
+   
+    text-align: center;
 }
 textarea{
     width: 310px;
     height: 80px;
     float: left;
 }
-messagearea{
-    overflow: hidden;
-}
 .smallLogo{
     height: 20px;
     float: right;
 }
 .message{
+    float: left;
     border-bottom: 2px solid black;
     padding: 20px;
+    background-color: #FFDE00;
+    margin: 3px;
+    box-shadow: 10px 5px 5px gray;
 }
 #messageApp{
-    
+    height: 100%;
     width:  450px;
-    margin: 0 auto;
+    
     padding: 20px;
-        background-color: #6599FF;
-}
+    background-color: #6599FF;
+    }
 input{
     width: 130px;
     height: 80px;
     background-color: #097054;
+    color: white;
+    font: bold 11px comic sans MS;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+ 
+}
+#messagearea{
+    display: block;
+    overflow: hidden;
+}
+em{
+    font-size: 0.8em;
+    text-align: right;
 }
