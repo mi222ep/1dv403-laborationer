@@ -19,6 +19,9 @@ CreateMessage: function(e){
 RenderMessages: function(){
     //Remove all messages
     document.getElementById("messagearea").innerHTML = "";
+    //Writes message counter
+    var messageCount = document.querySelector("#messageNumber");
+    messageCount.innerHTML = "Antal meddelanden: " +(messageApp.messages.length);
     
             //Render all messages
     for(var i=0; i < messageApp.messages.length; ++i){
@@ -26,11 +29,7 @@ RenderMessages: function(){
     }
 },
 RenderMessage: function(messageID){
-    //Writes message counter
-    var messageCount = document.querySelector("#messageNumber");
-    messageCount.innerHTML = "Antal meddelanden: " +(messageApp.messages.length);
-    
-    //Writes new message
+        //Writes new message
     var message = messageApp.messages[messageID].getHTMLText();
     var time = messageApp.messages[messageID].getDateText();
     var div = document.createElement("div");
