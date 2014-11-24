@@ -6,10 +6,17 @@ init: function(){
     
     //If submit button is clicked
     var submit = document.getElementById("send");
+    var text = document.getElementById("meddelande");
     submit.onclick = messageApp.CreateMessage;
     
+    text.onkeydown = function(e){
+            if (e.keyCode == 13 && !e.shiftKey) {
+            messageApp.CreateMessage();
+            return false;
+            }
+    }
 },
-CreateMessage: function(e){
+CreateMessage: function(){
     var text = document.getElementById("meddelande").value;
     var mess = new Message(text, new Date());
     messageApp.messages.push(mess);
@@ -17,13 +24,15 @@ CreateMessage: function(e){
     
 }, 
 RenderMessages: function(){
+    //Clears messagearea
+    document.getElementById("meddelande").value = "";
     //Remove all messages
     document.getElementById("messagearea").innerHTML = "";
     //Writes message counter
     var messageCount = document.querySelector("#messageNumber");
     messageCount.innerHTML = "Antal meddelanden: " +(messageApp.messages.length);
     
-            //Render all messages
+    //Render all messages
     for(var i=0; i < messageApp.messages.length; ++i){
         messageApp.RenderMessage(i);
     }
@@ -87,15 +96,14 @@ ShowTime: function(messageID){
     alert("inlägget skapades "+ day+ " klockan " + time);
     
 },
-//Array.splice(messageID, 1);
 RemoveMessage: function(messageID){
+    var confirmRemove  = confirm ("Vill du verkligen radera?");
+    if (confirmRemove){
     messageApp.messages.splice(messageID, 1);
     messageApp.RenderMessages();
+    }
     },
 
 };
-
-
-
-
 window.onload = messageApp.init;
+
