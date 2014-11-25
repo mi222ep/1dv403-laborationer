@@ -23,7 +23,6 @@ textarea{
 }
 .message{
     float: left;
-    border-bottom: 2px solid black;
     padding: 20px;
     background-color: #FFDE00;
     margin: 3px;

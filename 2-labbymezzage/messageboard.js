@@ -9,12 +9,13 @@ init: function(){
     var text = document.getElementById("meddelande");
     submit.onclick = messageApp.CreateMessage;
     
+    //Posts message if enter is pressed + new line if enter+shift is pressed
     text.onkeydown = function(e){
             if (e.keyCode == 13 && !e.shiftKey) {
             messageApp.CreateMessage();
             return false;
             }
-    }
+    };
 },
 CreateMessage: function(){
     var text = document.getElementById("meddelande").value;
@@ -64,10 +65,10 @@ RenderMessage: function(messageID){
     showTimeLink.setAttribute("href", "#");
     removeLink.onclick = function() {
         messageApp.RemoveMessage(messageID);
-    }
+    };
     showTime.onclick = function() {
         messageApp.ShowTime(messageID);
-    }
+    };
     
     //Organize message elements within each other
     removeLink.appendChild(remove);
