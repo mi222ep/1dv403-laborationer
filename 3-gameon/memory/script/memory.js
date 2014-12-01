@@ -2,9 +2,18 @@
 
 var memory ={
     
+    memoryArr: [],
+    
     init: function(){
-        alert("So far so good")
-    }
-}
+        
+        
+        var hello = new RandomGenerator.getPictureArray (3, 2);
+        
+        alert(hello);
+    },
+    
+    
+    
+};
 
 window.onload  = memory.init;
