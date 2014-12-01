@@ -1,0 +1,19 @@
+body{
+    background-color: beige;
+}
+table{
+    border: 2px solid black;
+    padding: 20px;
+}
+tr{
+    padding: 20px;
+    border: 2px solid black;
+}
+td{
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.empty{
+    display: none;
+}
