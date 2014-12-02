@@ -8,7 +8,9 @@ var memory ={
         
         var row = 4;
         var column = 4;
-
+        var guesses = 0;
+        var clicks = 0;
+        var pairs = 0;
     
         memory.memoryArr = RandomGenerator.getPictureArray (row, column);
         memory.RenderTable(row, column);
@@ -19,6 +21,8 @@ var memory ={
     RenderTable: function(rows, cols){
         
         var count = 0;
+        
+        
         var table = document.createElement("table");
         
         for (var i = 0; i < rows; i++){
@@ -30,31 +34,35 @@ var memory ={
             var a = document.createElement("a");
             var img = document.createElement("img");
             img.setAttribute("src", "pics/"+memory.memoryArr[count]+".png");
+            a.setAttribute("class", "unmatched");
             a.setAttribute("href", "#");
             a.appendChild(img);
             
             td.appendChild(a);
             tr.appendChild(td);
             count+=1;
-            a.onclick = function() {
-                memory.TurnTile();
-            };
-            
-                }
+                            }
         }
         
         var memorySpace = document.querySelector("#memorySpace");
         memorySpace.appendChild(table);
         
-        var memoryTiles = document.querySelectorAll("a");
-        memoryTiles.onclick = function() {
-            memory.TurnTile();
-        };
+        var memoryTiles = document.getElementsByTagName("a");
+        Array.prototype.forEach.call(memoryTiles, function(tile, tileID){memory.TurnTile(tile, tileID);});
+        
     },
-    TurnTile: function(){
-        alert("hejhej");
-    }
+    TurnTile: function(tile, tileID){
+        
+        tile.addEventListener("click", function(){
+        var p = tile.parentNode.querySelector(".unmatched");
+        var picID = memory.memoryArr[tileID];
+        p.classList.add("hidden");
+        alert("Detta är bricka nummer " +tileID+ " och bild nummer " + picID);
 
+    }
+    );
+
+}
 };
 
 window.onload  = memory.init;
