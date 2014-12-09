@@ -13,7 +13,10 @@ td{
     border: 2px solid black;
     padding: 20px;
 }
+.unmatched{
+    border: 2px solid red;
+}
 
-.hidden{
-    display: none;
+.hidden img{
+    border: 2px solid black;
 }
