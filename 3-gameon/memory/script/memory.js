@@ -10,10 +10,7 @@ var memory = {
 
         var row = 4;
         var column = 4;
-        var guesses = 0;
-        var clicks = 0;
-        var pairs = 0;
-
+        
         memory.memoryArr = RandomGenerator.getPictureArray(row, column);
         memory.RenderTable(row, column);
 
@@ -34,12 +31,13 @@ var memory = {
             for (var j = 0; j < cols; j++) {
                 var td = document.createElement("td");
                 var a = document.createElement("a");
+                var div = document.createElement("div");
                 var img = document.createElement("img");
                 img.setAttribute("src", "pics/" + memory.memoryArr[count] + ".png");
                 a.setAttribute("class", "unmatched");
                 a.setAttribute("href", "#");
-                a.appendChild(img);
-
+                a.appendChild(div);
+                div.appendChild(img);
                 td.appendChild(a);
                 tr.appendChild(td);
                 count += 1;
@@ -49,11 +47,11 @@ var memory = {
         var memorySpace = document.querySelector("#memorySpace");
         memorySpace.appendChild(table);
 
-        var memoryTiles = document.getElementsByTagName("a");
+        var memoryTiles = document.getElementsByClassName("unmatched");
         Array.prototype.forEach.call(memoryTiles, function(tile, tileID) {
             memory.TurnTile(tile, tileID);
         });
-
+         
     },
     TurnTile: function(tile, tileID) {
 
@@ -64,23 +62,31 @@ var memory = {
             p.classList.add("hidden");
             
             if(memory.firstPair === 0){
-                memory.firstPair= picID;
+                memory.firstPair = picID;
+                memory.click = p;
             }
-            else{
-                memory.ComPair(picID);
+            else if (memory.firstPair == 1){
+                var picID2 = p;
+                memory.ComPair(picID, picID2);
             }
             
         });
 
     },
-    ComPair: function(picID){
+    ComPair: function(picID, p){
         if(picID == memory.firstPair){
-            alert("Match");
+            
         }
         else{
-            alert("Fail");
+            
+            setTimeout(function() {
+            p.classList.remove("hidden");
+            memory.click.classList.remove("hidden");
+            memory.firstPair = 0;
+            }, 1000);
+            
         }
-        memory.firstPair = 0;
+        
     }
 };
 

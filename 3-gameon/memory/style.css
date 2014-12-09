@@ -14,9 +14,17 @@ td{
     padding: 20px;
 }
 .unmatched{
-    border: 2px solid red;
+    
 }
 
 .hidden img{
+    display: none;
+    
     border: 2px solid black;
+}
+a div{
+    background-image: url("pics/0.png");
+    width: 30px;
+    height: 30px;
+    border: 2px solid yellow;
 }
