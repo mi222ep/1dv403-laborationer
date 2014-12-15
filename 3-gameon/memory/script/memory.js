@@ -3,7 +3,10 @@
 var memory = {
 
     click: 0,
+    pairs:  [],
     firstPair: 0,
+    secondPair: 0,
+    tiles: [],
     memoryArr: [],
 
     init: function() {
@@ -63,32 +66,47 @@ var memory = {
             memory.click +=1;
             
             if(memory.click==1){
-                memory.firstPair = picID;
-                memory.click = p;
                 p.classList.add("hidden");
+                alert("Hej hej hje!");
+                memory.pairs.push(picID);
+                memory.tiles.push(p);
+                return;
             }
             
             if(memory.click == 2){
-                
+               p.classList.add("hidden");
+               alert("ojoj");
+               memory.pairs.push(picID);
+               memory.tiles.push(p);
+               if(memory.pairs[0] == memory.pairs[1]){
+                   
+                   alert("PAR!");
+               }
+               memory.ComPair();
+               
+               memory.pairs.length = 0;
+               memory.tiles.length = 0;
+               memory.click = 0;
             }
             
         });
 
     },
-    ComPair: function(picID, p){
-        if(picID == memory.firstPair){
-            
+    ComPair: function(){
+        if(memory.pairs[0] == memory.pairs[1]){
+            alert("YES; ETT PAR!");
+            return;
         }
         else{
-            
+            alert("Bättre lycka nästa gång");
             setTimeout(function() {
-            p.classList.remove("hidden");
-            memory.click.classList.remove("hidden");
+            var tile1 = memory.tiles[0];
+            var tile2 = memory.tiles[1];
+            tile1.classList.remove("hidden");
+            tile2.classList.remove("hidden");
             memory.firstPair = 0;
             }, 1000);
-            
         }
-        
     }
 };
 
