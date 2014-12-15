@@ -59,15 +59,17 @@ var memory = {
         tile.addEventListener("click", function() {
             var p = tile.parentNode.querySelector(".unmatched");
             var picID = memory.memoryArr[tileID];
-            p.classList.add("hidden");
             
-            if(memory.firstPair === 0){
+            memory.click +=1;
+            
+            if(memory.click==1){
                 memory.firstPair = picID;
                 memory.click = p;
+                p.classList.add("hidden");
             }
-            else if (memory.firstPair == 1){
-                var picID2 = p;
-                memory.ComPair(picID, picID2);
+            
+            if(memory.click == 2){
+                
             }
             
         });
