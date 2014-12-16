@@ -1,11 +1,15 @@
 "use strict"
 
 var memory = {
-
+    //var click = 0; --- bättre?
+    
+    //Det går att trycka på en bricka när två omatchade visas. Hur lösa?  
+    numberOfPairs: 0,
     click: 0,
-    pairs:  [],
+    pairs: [],
     firstPair: 0,
     secondPair: 0,
+    pairCounter: 0,
     tiles: [],
     memoryArr: [],
 
@@ -16,7 +20,7 @@ var memory = {
         
         memory.memoryArr = RandomGenerator.getPictureArray(row, column);
         memory.RenderTable(row, column);
-
+        memory.numberOfPairs = row*column/2;
 
 
     },
@@ -66,27 +70,30 @@ var memory = {
             memory.click +=1;
             
             if(memory.click==1){
+                 if (p.classList.contains("hidden")) { 
+                memory.click = 0; 
+                return;
+                 }
                 p.classList.add("hidden");
                 memory.pairs.push(picID);
-                memory.tiles.push(p);
                 memory.firstPair = p;
                 return;
             }
             
             if(memory.click == 2){
+                if (p.classList.contains("hidden")) { 
+                memory.click = 1; 
+                return;
+                 }
                p.classList.add("hidden");
                memory.secondPair = p;
                memory.pairs.push(picID);
-               memory.tiles.push(p);
-               if(memory.pairs[0] == memory.pairs[1]){
-                   
-                   alert("PAR!");
-               }
                memory.ComPair();
-               
                memory.pairs.length = 0;
-               memory.tiles.length = 0;
                memory.click = 0;
+               if(memory.pairCounter == memory.numberOfPairs){
+            alert("Grattis, du vann!");
+        }
             }
             
         });
@@ -94,6 +101,7 @@ var memory = {
     },
     ComPair: function(){
         if(memory.pairs[0] == memory.pairs[1]){
+            memory.pairCounter += 1;
             return;
         }
         else{
@@ -103,6 +111,7 @@ var memory = {
             memory.firstPair = 0;
             }, 1000);
         }
+        
     }
 };
 

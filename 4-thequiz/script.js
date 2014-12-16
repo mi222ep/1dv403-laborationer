@@ -30,9 +30,6 @@ window.onload = function(){
        answer.open("POST", nextURL, true);
        answer.setRequestHeader("Content-Type", "application/json");
        
-       //NYTT ANROP FÖR VARJE NY POST/GET? 
-       //Jag verkar inte få någon kontakt med servern nu, vad gör jag för fel?
-       
        answer.send("EXAKT HUR SKALL SVARET SE UT?!");
        
      };
