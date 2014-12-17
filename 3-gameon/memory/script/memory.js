@@ -105,6 +105,9 @@ var memory = {
             return;
         }
         else{
+            //TA BORT KLICKET NÄR DEN TIMEOUTAR!
+            //Prevent default
+            //Som i labby message
             setTimeout(function() {
             memory.firstPair.classList.remove("hidden");
             memory.secondPair.classList.remove("hidden");
