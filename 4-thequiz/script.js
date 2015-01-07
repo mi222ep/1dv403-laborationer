@@ -24,20 +24,30 @@ window.onload = function(){
      var answerText = document.getElementById("answer").value;
      document.getElementById("answer").value = "";
      postAnswer.onreadystatechange = function(){
-       
+         
+       //Om svaret är fel
        if(postAnswer.readyState === 2 && postAnswer.status  === 400){
            alert("Du svarade "+ answerText +" och det var fel. Försök igen!");
        }
+       
+       //Om svaret är rätt
        if(postAnswer.readyState === 4 && postAnswer.status === 200){
            
            
            
            console.log("Rätt svar");
            var hej = JSON.parse(postAnswer.responseText);
+           console.log(hej);
            var nextQ  = new XMLHttpRequest();
            var nextURL = hej.nextURL;
            console.log(nextURL);
+           
+           if(nextURL === undefined){
+             alert("spelet är slut") ;
+           }
+           else{
            nextQ.onreadystatechange = function(){
+               
                if(nextQ.readyState === 4 && nextQ.status  === 200){
                 var nextResponse = JSON.parse(nextQ.responseText);
                 var halloj = document.getElementById("question");
@@ -52,7 +62,8 @@ window.onload = function(){
            
            
            
-       }//end of if(correct answer)
+       }}
+       //end of if(correct answer)
       
        
        
@@ -65,9 +76,7 @@ window.onload = function(){
      postAnswer.open("POST", firstURL, true);
      postAnswer.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
      postAnswer.send(JSON.stringify(ok));
-     console.log(JSON.stringify(ok));
      console.log(postAnswer.responseText);
-     
      
     });
     
