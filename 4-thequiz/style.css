@@ -1,0 +1,40 @@
+body{
+    background-color: #FF9900;
+    font-family: comic sans MS;
+    text-align: center;
+    }
+
+h1{
+     color: #097054;
+     font-size: 3em;
+     text-shadow: 2px 2px gray;
+}
+h1, h2, h3{
+   
+    text-align: center;
+}
+input{
+    background-color: #097054;
+    color: white;
+    font: bold 11px comic sans MS;
+    cursor: pointer;
+    border-radius: 4px;
+ 
+}
+td{
+    padding: 5px;
+}
+#wrapper{
+    width: 400px;
+    margin: 0 auto;
+}
+#question{
+    padding: 20px;
+    border: 2px dotted;
+    
+}
+#restart{
+    margin-top: 10px;
+    float: right;
+    background-color: gray;
+}
