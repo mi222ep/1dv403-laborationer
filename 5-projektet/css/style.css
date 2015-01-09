@@ -2,8 +2,6 @@ body{
     background-color: #FF9900;
     font-family: comic sans MS;
     text-align: center;
-    width: 1000px;
-    height: 500px;
     }
 
 h1{
@@ -51,4 +49,10 @@ background-color:#eee;
 border:1px solid black;
 border-radius:15px;
 text-align:center;
+}
+
+.thumbImg{
+    float: left;
+    border: 2px solid black;
+    background: white;
 }
