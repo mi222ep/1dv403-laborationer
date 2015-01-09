@@ -57,6 +57,6 @@ function renderImage(imgObject){
     
 }
 function clickingA(imgURL){
-    alert(imgURL);
+    document.body.style.background = 'url(\"'+imgURL+'\")';
 }
 window.onload = renderImageViewer();
