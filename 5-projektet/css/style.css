@@ -2,6 +2,8 @@ body{
     background-color: #FF9900;
     font-family: comic sans MS;
     text-align: center;
+    width: 1000px;
+    height: 500px;
     }
 
 h1{
@@ -38,4 +40,15 @@ td{
     margin-top: 10px;
     float: right;
     background-color: gray;
+}
+
+#dragme{
+position:absolute;
+display:none;
+height:100px;
+width:100px;
+background-color:#eee;
+border:1px solid black;
+border-radius:15px;
+text-align:center;
 }
