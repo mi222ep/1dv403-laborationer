@@ -16,7 +16,7 @@ function renderImageViewer(){
          for(var i = 0; i< arrLength; i+=1){
              console.log(imageInfo[i].URL);
              getMaxWidthAndLength(imageInfo[i].thumbWidth, imageInfo[i].thumbHeight);
-             renderImage(imageInfo[i].thumbURL);
+             renderImage(imageInfo[i]);
          }
          console.log(width);
          console.log(height);
@@ -36,11 +36,11 @@ function getMaxWidthAndLength(picWidth, picHeight){
     }
     
 }
-function renderImage(URL){
+function renderImage(imgObject){
     var a = document.createElement("a");
     var frame = document.createElement("div");
     var img = document.createElement("img");
-    img.setAttribute("src", URL);
+    img.setAttribute("src", imgObject.thumbURL);
     frame.style.width = width+'px';
     frame.style.height = height+'px';
     
@@ -48,10 +48,15 @@ function renderImage(URL){
     a.setAttribute("href", "#");
     a.appendChild(frame);
     
+    a.addEventListener("click", function() {clickingA(imgObject.URL)});
+    
     frame.appendChild(img);
     
     var imageSpace = document.getElementById("imageSpace");
     imageSpace.appendChild(a);
     
+}
+function clickingA(imgURL){
+    alert(imgURL);
 }
 window.onload = renderImageViewer();
