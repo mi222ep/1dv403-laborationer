@@ -52,17 +52,17 @@ window.onload = function() {
                 rightOrWrong.innerHTML = "Rätt svar. bra jobbat";
                 
                 console.log("Rätt svar");
-                var hej = JSON.parse(postAnswer.responseText);
-                console.log(hej);
+                var correctAnswer = JSON.parse(postAnswer.responseText);
+                console.log(correctAnswer);
                 var nextQ = new XMLHttpRequest();
-                var nextURL = hej.nextURL;
+                var nextURL = correctAnswer.nextURL;
                 console.log(nextURL);
 
                 document.getElementById("tries").innerHTML = tries;
                 document.getElementById("score").innerHTML = score;
 
                 if (nextURL === undefined) {
-                    document.getElementById("question").innerHTML = "Spelet är slut. Du fick " + score + " poäng på totalt "+ tries + " försök.";
+                    document.getElementById("question").innerHTML = "Spelet är slut. Du fick " + score + " poäng på totalt "+ tries + " försök";
                     document.getElementById("inputArea").innerHTML = " ";
 
                 }
@@ -71,8 +71,8 @@ window.onload = function() {
 
                         if (nextQ.readyState === 4 && nextQ.status === 200) {
                             var nextResponse = JSON.parse(nextQ.responseText);
-                            var halloj = document.getElementById("question");
-                            halloj.innerHTML = nextResponse.question;
+                            var Qarea = document.getElementById("question");
+                            Qarea.innerHTML = nextResponse.question;
                             firstURL = nextResponse.nextURL;
                             console.log(nextResponse);
                         }

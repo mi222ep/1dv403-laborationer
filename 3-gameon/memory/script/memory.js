@@ -1,9 +1,7 @@
 "use strict"
 
 var memory = {
-    //var click = 0; --- bättre?
-    
-    //Det går att trycka på en bricka när två omatchade visas. Hur lösa?  
+
     numberOfPairs: 0,
     click: 0,
     pairs: [],
@@ -69,6 +67,8 @@ var memory = {
             
             memory.click +=1;
             
+            //Om klick är mer än 2, returnera bara allt
+            
             if(memory.click==1){
                  if (p.classList.contains("hidden")) { 
                 memory.click = 0; 
@@ -106,8 +106,8 @@ var memory = {
         }
         else{
             //TA BORT KLICKET NÄR DEN TIMEOUTAR!
-            //Prevent default
-            //Som i labby message
+            //HUR?!?!?!?!?!?!?!??!?!?!!!!!!!!
+            
             setTimeout(function() {
             memory.firstPair.classList.remove("hidden");
             memory.secondPair.classList.remove("hidden");
