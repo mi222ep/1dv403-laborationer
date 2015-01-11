@@ -11,22 +11,18 @@ var myWindow = {
         
         div.setAttribute("class", "myWindow");
         content.setAttribute("id", typeOfWindow + ID);
-        div.setAttribute("class", "content");
+        content.setAttribute("class", "content");
         topBar.setAttribute("class", "topBar");
         bottomBar.setAttribute("class", "bottomBar");
-        
         topBar.appendChild(topText);
         topText.innerHTML = name;
         div.appendChild(topBar);
         div.appendChild(content);
         div.appendChild(bottomBar);
-        console.log(div);
-        
         var page = document.getElementById("pageContent");
-        console.log(page);
         page.appendChild(div);
         
-        //renderImageViewer();
+        renderImageViewer();
         
         
     }
