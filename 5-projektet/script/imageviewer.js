@@ -2,9 +2,7 @@ var width = 0;
 var height = 0;
 
 function renderImageViewer(){
-    
-    
-    
+
     var image = new XMLHttpRequest();
     
     image.onreadystatechange = function(){
@@ -52,11 +50,11 @@ function renderImage(imgObject){
     
     frame.appendChild(img);
     
-    var imageSpace = document.getElementById("imageSpace");
+    var imageSpace = document.getElementById("imageviewer1");
     imageSpace.appendChild(a);
     
 }
 function clickingA(imgURL){
     document.body.style.background = 'url(\"'+imgURL+'\")';
 }
-window.onload = renderImageViewer();
+//window.onload = renderImageViewer();

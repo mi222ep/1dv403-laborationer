@@ -56,3 +56,37 @@ text-align:center;
     border: 2px solid black;
     background: white;
 }
+.myWindow{
+    width: 300px;
+    height: 300px;
+    background-color: beige;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+.topBar{
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 30px;
+    float: left;
+        border: 2px solid black;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    top:  30px;
+    bottom: 30px;
+    float: left;
+    border: 2px solid red;
+}
+.bottomBar{
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    float: left;
+    height: 30px;
+    border: 2px solid black;
+}
