@@ -1,7 +1,6 @@
 body{
     background-color: #FF9900;
     font-family: comic sans MS;
-    text-align: center;
     }
 
 h1{
@@ -52,9 +51,16 @@ text-align:center;
 }
 
 .thumbImg{
+    border-radius: 10px;
+    overflow: hidden;
     float: left;
-    border: 2px solid black;
     background: white;
+    margin: 10px;
+}
+.thumbImg img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 .myWindow{
     width: 300px;
@@ -64,23 +70,24 @@ text-align:center;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
 }
 .topBar{
+    font-size: 0.5em;
     background-color: white;
     width: 100%;
     position: absolute;
     top: 0;
-    height: 30px;
+    height: 10px;
 }
 .content{
     width: 100%;
     position: absolute;
     overflow-y: scroll;
-    top:  30px;
-    bottom: 30px;
+    top:  10px;
+    bottom: 10px;
 }
 .bottomBar{
     background-color: white;
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 30px;
+    height: 10px;
 }

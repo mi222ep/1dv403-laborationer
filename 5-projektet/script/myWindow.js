@@ -15,7 +15,7 @@ var myWindow = {
         topBar.setAttribute("class", "topBar");
         bottomBar.setAttribute("class", "bottomBar");
         topBar.appendChild(topText);
-        topText.innerHTML = name;
+        topBar.innerHTML = name;
         div.appendChild(topBar);
         div.appendChild(content);
         div.appendChild(bottomBar);
