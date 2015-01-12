@@ -1,21 +1,41 @@
 console.log("ok");
 var myWindow = {
-    init: function(typeOfWindow, name, ID){
+    
+    init: function(){
+        document.getElementById("imageviewer").addEventListener("click", function() {
+        myWindow.renderWindow("imageviewer", "Bildvisaren", 1);  
+        });
+    },
+    
+    renderWindow: function(typeOfWindow, name, ID){
         
         var div  = document.createElement("div");
         var content = document.createElement("div");
         var topBar = document.createElement("div");
         var bottomBar = document.createElement("div");
         var topText = document.createElement("p");
+        var a = document.createElement("a");
+        var img =document.createElement("img");
+        var windowID = typeOfWindow + ID;
         
+        console.log(windowID);
         
         div.setAttribute("class", "myWindow");
-        content.setAttribute("id", typeOfWindow + ID);
+        content.setAttribute("id", windowID);
         content.setAttribute("class", "content");
         topBar.setAttribute("class", "topBar");
+        img.setAttribute("src", "pics/close.png");
+        img.setAttribute("alt", "cross, press here to close");
+        img.setAttribute("class", "close");
+        img.setAttribute("id", "close");
+        topText.setAttribute("class", "topText");
+        a.setAttribute("href", "#");
+        a.addEventListener("click", function(){myWindow.closeWindow(windowID)});
         bottomBar.setAttribute("class", "bottomBar");
+        topText.innerHTML = name;
         topBar.appendChild(topText);
-        topBar.innerHTML = name;
+        topBar.appendChild(a);
+        a.appendChild(img);
         div.appendChild(topBar);
         div.appendChild(content);
         div.appendChild(bottomBar);
@@ -25,7 +45,12 @@ var myWindow = {
         renderImageViewer();
         
         
+    },
+    closeWindow: function(windowID){
+        var closingWindow = document.getElementById(windowID).parentNode;
+        console.log(closingWindow.parentNode.nodeName);
+        closingWindow.parentNode.removeChild(closingWindow);
     }
 };
 
-window.onload = function(){ myWindow.init("imageviewer", "Bildvisaren", 1)};
+window.onload = function(){ myWindow.init()};
