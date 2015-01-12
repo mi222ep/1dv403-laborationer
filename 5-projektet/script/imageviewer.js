@@ -1,3 +1,5 @@
+"use strict";
+
 var width = 0;
 var height = 0;
 
@@ -19,8 +21,8 @@ function renderImageViewer(windowID){
         if(image.readyState === 4 && image.status === 200){
         
         var removeLoad = document.getElementById("loadBottombar"+windowID);
-        console.log(removeLoad);
-        removeLoad.setAttribute("display", "none");
+        console.log(removeLoad.parentNode);
+        removeLoad.parentNode.removeChild(removeLoad);
         
          var imageInfo = JSON.parse(image.responseText);
          var arrLength  = imageInfo.length;

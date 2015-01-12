@@ -1,4 +1,5 @@
-console.log("ok");
+"use strict";
+
 var myWindow = {
     
     init: function(){
@@ -16,12 +17,16 @@ var myWindow = {
         var topText = document.createElement("p");
         var a = document.createElement("a");
         var img =document.createElement("img");
+        var topIMG = document.createElement("img");
         var windowID = typeOfWindow + ID;
         
         div.setAttribute("class", "myWindow");
         content.setAttribute("id", windowID);
         content.setAttribute("class", "content");
         topBar.setAttribute("class", "topBar");
+        topIMG.setAttribute("src", "pics/logo.png");
+        topIMG.setAttribute("class", "topIMG");
+        
         img.setAttribute("src", "pics/close.png");
         img.setAttribute("alt", "cross, press here to close");
         img.setAttribute("class", "close");
@@ -30,8 +35,9 @@ var myWindow = {
         a.setAttribute("href", "#");
         a.addEventListener("click", function(){myWindow.closeWindow(windowID)});
         bottomBar.setAttribute("class", "bottomBar");
-        bottomBar.setAttribute("id", "bottombar"+windowID)
+        bottomBar.setAttribute("id", "bottombar"+windowID);
         topText.innerHTML = name;
+        topBar.appendChild(topIMG);
         topBar.appendChild(topText);
         topBar.appendChild(a);
         a.appendChild(img);
