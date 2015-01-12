@@ -18,8 +18,6 @@ var myWindow = {
         var img =document.createElement("img");
         var windowID = typeOfWindow + ID;
         
-        console.log(windowID);
-        
         div.setAttribute("class", "myWindow");
         content.setAttribute("id", windowID);
         content.setAttribute("class", "content");
@@ -32,6 +30,7 @@ var myWindow = {
         a.setAttribute("href", "#");
         a.addEventListener("click", function(){myWindow.closeWindow(windowID)});
         bottomBar.setAttribute("class", "bottomBar");
+        bottomBar.setAttribute("id", "bottombar"+windowID)
         topText.innerHTML = name;
         topBar.appendChild(topText);
         topBar.appendChild(a);
@@ -42,13 +41,12 @@ var myWindow = {
         var page = document.getElementById("pageContent");
         page.appendChild(div);
         
-        renderImageViewer();
+        renderImageViewer(windowID);
         
         
     },
     closeWindow: function(windowID){
         var closingWindow = document.getElementById(windowID).parentNode;
-        console.log(closingWindow.parentNode.nodeName);
         closingWindow.parentNode.removeChild(closingWindow);
     }
 };

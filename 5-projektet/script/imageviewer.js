@@ -1,23 +1,33 @@
 var width = 0;
 var height = 0;
 
-function renderImageViewer(){
-
+function renderImageViewer(windowID){
+    
+    var bottombar = document.getElementById("bottombar"+windowID);
+    var img = document.createElement("img");
+    img.setAttribute("src", "pics/ajax-loader.gif");
+    img.setAttribute("class", "ajaxLoad");
+    img.setAttribute("id", "loadBottombar"+windowID);
+    
+    bottombar.appendChild(img);
+    console.log(bottombar);
+    console.log(img);
     var image = new XMLHttpRequest();
     
     image.onreadystatechange = function(){
+        
         if(image.readyState === 4 && image.status === 200){
-            
+        
+        var removeLoad = document.getElementById("loadBottombar"+windowID);
+        console.log(removeLoad);
+        removeLoad.setAttribute("display", "none");
+        
          var imageInfo = JSON.parse(image.responseText);
-         console.log(imageInfo);
          var arrLength  = imageInfo.length;
          for(var i = 0; i< arrLength; i+=1){
-             console.log(imageInfo[i].URL);
              getMaxWidthAndLength(imageInfo[i].thumbWidth, imageInfo[i].thumbHeight);
              renderImage(imageInfo[i]);
          }
-         console.log(width);
-         console.log(height);
         }
     };
     
