@@ -15,28 +15,6 @@ p{
     margin: 0;
     padding: 0;
 }
-h1, h2, h3{
-   
-    text-align: center;
-}
-input{
-    background-color: #097054;
-    color: white;
-    font: bold 11px comic sans MS;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#dragme{
-position:absolute;
-display:none;
-height:100px;
-width:100px;
-background-color:#eee;
-border:1px solid black;
-border-radius:15px;
-text-align:center;
-}
 
 .thumbImg{
     border-radius: 10px;
@@ -98,6 +76,7 @@ text-align:center;
 .close{
     float: right;
     border-radius: 4px;
+    border: 2px outset;
 }
 .topText{
     float: left;
@@ -111,5 +90,5 @@ text-align:center;
     height: 15px;
     width: 15px;
     float: left;
-    margin-right: 5px;
+    margin: 5px;
 }
