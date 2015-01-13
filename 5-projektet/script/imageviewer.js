@@ -28,8 +28,13 @@ function renderImageViewer(windowID){
          var arrLength  = imageInfo.length;
          for(var i = 0; i< arrLength; i+=1){
              getMaxWidthAndLength(imageInfo[i].thumbWidth, imageInfo[i].thumbHeight);
+             
+         }
+         for(var i = 0; i< arrLength; i+=1){
+             getMaxWidthAndLength(imageInfo[i].thumbWidth, imageInfo[i].thumbHeight);
              renderImage(imageInfo[i]);
          }
+         
         }
     };
     
@@ -38,12 +43,19 @@ function renderImageViewer(windowID){
     
 }
 function getMaxWidthAndLength(picWidth, picHeight){
+    
     if(picWidth>width){
         width = picWidth;
     }
     if(picHeight>height){
         height = picHeight;
     }
+    console.log("PIC HEIGHT");
+    console.log(picHeight);
+    console.log(height);
+    console.log("PIC WIDTH");
+    console.log(picWidth);
+    console.log(width);
     
 }
 function renderImage(imgObject){
@@ -51,6 +63,9 @@ function renderImage(imgObject){
     var frame = document.createElement("div");
     var img = document.createElement("img");
     img.setAttribute("src", imgObject.thumbURL);
+    console.log("bredd och höjd");
+    console.log(width);
+    console.log(height);
     frame.style.width = width+'px';
     frame.style.height = height+'px';
     
