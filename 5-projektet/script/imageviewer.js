@@ -50,12 +50,6 @@ function getMaxWidthAndLength(picWidth, picHeight){
     if(picHeight>height){
         height = picHeight;
     }
-    console.log("PIC HEIGHT");
-    console.log(picHeight);
-    console.log(height);
-    console.log("PIC WIDTH");
-    console.log(picWidth);
-    console.log(width);
     
 }
 function renderImage(imgObject){
@@ -63,9 +57,6 @@ function renderImage(imgObject){
     var frame = document.createElement("div");
     var img = document.createElement("img");
     img.setAttribute("src", imgObject.thumbURL);
-    console.log("bredd och höjd");
-    console.log(width);
-    console.log(height);
     frame.style.width = width+'px';
     frame.style.height = height+'px';
     
@@ -84,4 +75,5 @@ function renderImage(imgObject){
 function clickingA(imgURL){
     document.body.style.background = 'url(\"'+imgURL+'\")';
 }
+
 //window.onload = renderImageViewer();

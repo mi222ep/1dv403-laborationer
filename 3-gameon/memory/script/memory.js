@@ -70,6 +70,7 @@ var memory = {
             //Om klick är mer än 2, returnera bara allt
             
             if(memory.click==1){
+                console.log("1 click");
                  if (p.classList.contains("hidden")) { 
                 memory.click = 0; 
                 return;
@@ -81,6 +82,7 @@ var memory = {
             }
             
             if(memory.click == 2){
+                console.log("2 click");
                 if (p.classList.contains("hidden")) { 
                 memory.click = 1; 
                 return;
@@ -90,10 +92,13 @@ var memory = {
                memory.pairs.push(picID);
                memory.ComPair();
                memory.pairs.length = 0;
-               memory.click = 0;
                if(memory.pairCounter == memory.numberOfPairs){
             alert("Grattis, du vann!");
         }
+            }
+            else{
+                console.log("more than 2");
+                return;
             }
             
         });
@@ -102,16 +107,16 @@ var memory = {
     ComPair: function(){
         if(memory.pairs[0] == memory.pairs[1]){
             memory.pairCounter += 1;
+            memory.click = 0;
             return;
         }
         else{
-            //TA BORT KLICKET NÄR DEN TIMEOUTAR!
-            //HUR?!?!?!?!?!?!?!??!?!?!!!!!!!!
             
             setTimeout(function() {
             memory.firstPair.classList.remove("hidden");
             memory.secondPair.classList.remove("hidden");
             memory.firstPair = 0;
+            memory.click = 0;
             }, 1000);
         }
         

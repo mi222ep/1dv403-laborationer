@@ -4,6 +4,7 @@ var myWindow = {
     
     init: function(){
         document.getElementById("imageviewer").addEventListener("click", function() {
+            
         myWindow.renderWindow("imageviewer", "Bildvisaren", 1);  
         });
     },
